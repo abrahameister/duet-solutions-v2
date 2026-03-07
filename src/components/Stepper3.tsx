@@ -70,7 +70,7 @@ export default function Stepper3() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-24 bg-bg relative">
+        <section id="proceso" ref={containerRef} className="py-24 bg-bg relative">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16">

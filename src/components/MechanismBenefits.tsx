@@ -64,7 +64,7 @@ export default function MechanismBenefits() {
                         Características Avanzadas para Mejorar tu <span className="text-accentPrimary">Experiencia Digital</span>
                     </h2>
                     <p className="text-base md:text-lg text-textMuted max-w-2xl leading-relaxed">
-                        Eliminamos las fricciones tecnológicas entregando sistemas de precisión. El "Fließband-Business" adaptado a tus necesidades.
+                        Eliminamos las barreras tecnológicas entregando soluciones a medida. Un ecosistema digital inteligente adaptado totalmente a tus objetivos y desafíos específicos.
                     </p>
                 </div>
 
