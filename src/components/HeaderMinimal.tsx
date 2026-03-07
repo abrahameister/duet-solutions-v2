@@ -24,7 +24,7 @@ export default function HeaderMinimal() {
     return (
         <header
             ref={headerRef}
-            className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-border shadow-sm"
+            className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg/80 border-b border-border shadow-sm"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 focus-ring rounded-md">

@@ -21,8 +21,8 @@ const services = [
         title: "BigQuery",
         description: "Procesamos y analizamos grandes volúmenes de datos para que puedas obtener insights valiosos y tomar decisiones informadas.",
         icon: <Database className="w-8 h-8" />,
-        color: "text-surface",
-        bg: "bg-surface/10",
+        color: "text-text",
+        bg: "bg-text/10",
     },
     {
         title: "Appscript",
@@ -61,10 +61,10 @@ export default function ServiceCategories() {
     }, []);
 
     return (
-        <section id="servicios" ref={sectionRef} className="py-24 bg-white relative">
+        <section id="servicios" ref={sectionRef} className="py-24 bg-bg relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-surface mb-4">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-text mb-4">
                         Tecnologías y Soluciones
                     </h2>
                     <p className="text-lg text-textMuted">
@@ -76,12 +76,12 @@ export default function ServiceCategories() {
                     {services.map((service, idx) => (
                         <div
                             key={idx}
-                            className="service-card group relative p-8 rounded-2xl bg-[#F8F9FA] border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 overflow-hidden"
+                            className="service-card group relative p-8 rounded-2xl bg-surface border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 overflow-hidden"
                         >
                             <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${service.bg} ${service.color} mb-6 transition-transform group-hover:scale-110`}>
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-surface mb-3">
+                            <h3 className="text-xl font-bold text-text mb-3">
                                 {service.title}
                             </h3>
                             <p className="text-textMuted leading-relaxed">
@@ -90,7 +90,7 @@ export default function ServiceCategories() {
 
                             {/* Decorative Geometric Element */}
                             <div className="absolute -right-6 -bottom-6 opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor" className="text-surface">
+                                <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor" className="text-text">
                                     <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" />
                                 </svg>
                             </div>

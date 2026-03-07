@@ -4,15 +4,15 @@ import { ArrowRight } from "lucide-react";
 
 export default function PreFooterCTA() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden border-t border-border/50">
+        <section className="py-24 bg-bg relative overflow-hidden border-t border-border/50">
             <div className="absolute inset-0 bg-dot-pattern opacity-50 z-0 pointer-events-none" />
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-surface2/5 text-surface font-semibold text-sm border border-surface/10">
+                <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-surface2/20 text-text font-semibold text-sm border border-border">
                     ¿Listo para el cambio?
                 </div>
 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-surface mb-6 tracking-tight text-balance">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text mb-6 tracking-tight text-balance">
                     Da el primer paso hacia la <span className="text-transparent bg-clip-text bg-gradient-to-r from-accentPrimary to-accentSecondary">eficiencia absoluta.</span>
                 </h2>
 

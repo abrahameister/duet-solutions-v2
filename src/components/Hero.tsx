@@ -66,7 +66,7 @@ export default function Hero() {
                             <span>El único límite es tu imaginación</span>
                         </div>
 
-                        <h1 className="hero-element text-4xl sm:text-5xl lg:text-6xl font-extrabold text-surface leading-[1.1] mb-6 tracking-tight">
+                        <h1 className="hero-element text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text leading-[1.1] mb-6 tracking-tight">
                             Impulsamos tu éxito, sin importar tu escala.
                         </h1>
 
@@ -86,21 +86,21 @@ export default function Hero() {
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <Zap className="w-5 h-5 text-accentPrimary" />
-                                    <span className="font-bold text-3xl text-surface">-80%</span>
+                                    <span className="font-bold text-3xl text-text">-80%</span>
                                 </div>
                                 <p className="text-sm text-textMuted font-medium leading-tight">en tiempos de<br />procesos manuales</p>
                             </div>
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <Bot className="w-5 h-5 text-accentSecondary" />
-                                    <span className="font-bold text-3xl text-surface">100%</span>
+                                    <span className="font-bold text-3xl text-text">100%</span>
                                 </div>
                                 <p className="text-sm text-textMuted font-medium leading-tight">Adaptabilidad<br />a tu medida</p>
                             </div>
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <LineChart className="w-5 h-5 text-accentPrimary" />
-                                    <span className="font-bold text-3xl text-surface">ROI</span>
+                                    <span className="font-bold text-3xl text-text">ROI</span>
                                 </div>
                                 <p className="text-sm text-textMuted font-medium leading-tight">Impacto medible<br />en rentabilidad</p>
                             </div>
@@ -121,7 +121,7 @@ export default function Hero() {
                             {[1, 2, 3, 4].map((i) => (
                                 <div
                                     key={i}
-                                    className="visual-node absolute w-16 h-16 bg-white rounded-xl shadow-lg border border-border flex items-center justify-center z-10"
+                                    className="visual-node absolute w-16 h-16 bg-surface rounded-xl shadow-lg border border-border flex items-center justify-center z-10"
                                 >
                                     <div className={`w-8 h-8 rounded-lg ${i % 2 === 0 ? 'bg-accentSecondary/20' : 'bg-accentPrimary/20'}`} />
                                 </div>

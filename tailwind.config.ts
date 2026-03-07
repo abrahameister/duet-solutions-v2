@@ -9,18 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#F8F9FA",
-        surface: "#FFFFFF",
-        surface2: "#F0F2F5",
-        text: "#1A3B56",
-        textMuted: "rgba(26,59,86,0.72)",
-        border: "rgba(26,59,86,0.14)",
+        bg: "#0B1722",
+        surface: "#1A3B56",
+        surface2: "#234B6E",
+        text: "#EAF0FF",
+        textMuted: "rgba(234,240,255,0.72)",
+        border: "rgba(234,240,255,0.14)",
         accentPrimary: "#E88632",
         accentSecondary: "#86AB45",
         danger: "#FF5A6B",
         warning: "#FFCC66",
-        darkSurface: "#1A3B56", // Keep dark tokens for specific cards if needed
-        darkSurface2: "#234B6E",
       },
       borderRadius: {
         sm: "10px",
@@ -29,15 +27,15 @@ const config: Config = {
         pill: "9999px",
       },
       boxShadow: {
-        sm: "0 6px 18px rgba(26,59,86,0.08)",
-        md: "0 14px 40px rgba(26,59,86,0.12)",
+        sm: "0 6px 18px rgba(0,0,0,0.28)",
+        md: "0 14px 40px rgba(0,0,0,0.35)",
       },
       fontFamily: {
-        heading: ["Inter", "system-ui", "sans-serif"],
-        body: ["Inter", "Roboto", "system-ui", "sans-serif"],
+        heading: ["Space Grotesk", "Syne", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        'dot-pattern': 'radial-gradient(circle, rgba(26,59,86,0.08) 1px, transparent 1px)',
+        'dot-pattern': 'radial-gradient(circle, rgba(234,240,255,0.05) 1px, transparent 1px)',
       },
       backgroundSize: {
         'dot-pattern': '24px 24px',

@@ -20,8 +20,8 @@ export default function Home() {
             <FooterExtended />
 
             {/* Mobile Sticky CTA */}
-            <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-border shadow-[0_-10px_40px_rgba(0,0,0,0.1)] z-50 flex items-center gap-4">
-                <button className="flex-1 bg-surface py-3.5 rounded-xl text-white font-bold shadow-md active:scale-95 transition-transform flex justify-center items-center gap-2">
+            <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-bg/95 backdrop-blur-md border-t border-border shadow-[0_-10px_40px_rgba(0,0,0,0.5)] z-50 flex items-center gap-4">
+                <button className="flex-1 bg-accentPrimary py-3.5 rounded-xl text-white font-bold shadow-md active:scale-95 transition-transform flex justify-center items-center gap-2">
                     Agendar Análisis
                 </button>
                 <button className="w-14 h-14 bg-[#25D366] rounded-xl text-white shadow-md active:scale-95 transition-transform flex items-center justify-center shrink-0">

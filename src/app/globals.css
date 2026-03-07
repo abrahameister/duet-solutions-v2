@@ -6,8 +6,13 @@
   body {
     @apply bg-bg text-text antialiased font-body relative min-h-screen overflow-x-hidden;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading tracking-tight;
   }
 }
@@ -16,10 +21,12 @@
   .text-balance {
     text-wrap: balance;
   }
+
   .bg-dot-pattern {
-    background-image: radial-gradient(circle, rgba(26,59,86,0.08) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(234, 240, 255, 0.05) 1px, transparent 1px);
     background-size: 24px 24px;
   }
+
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentPrimary focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
   }
