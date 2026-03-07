@@ -41,7 +41,7 @@ export default function MechanismBenefits() {
                 y: 30,
                 opacity: 0,
                 duration: 0.5,
-                stagger: 0.08,
+                stagger: 0.1,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -53,9 +53,9 @@ export default function MechanismBenefits() {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-16 bg-bg text-text relative overflow-hidden border-t border-border/50">
+        <section ref={containerRef} className="py-16 bg-bg text-text relative overflow-hidden border-t border-white/5">
             {/* Background Geometrics */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-surface/10 skew-x-12 translate-x-1/2 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-accentPrimary/5 skew-x-12 translate-x-1/2 pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="mb-12">
@@ -71,17 +71,17 @@ export default function MechanismBenefits() {
                     {characteristics.map((feat, idx) => (
                         <div
                             key={idx}
-                            className="mechanism-card group relative p-6 md:p-8 rounded-2xl bg-surface border border-white/5 backdrop-blur-sm transition-all hover:border-accentPrimary/20 hover:shadow-xl overflow-hidden"
+                            className="mechanism-card group relative p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all hover:border-accentPrimary/30 hover:bg-white/10 hover:shadow-2xl overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-accentPrimary/5 rounded-full blur-3xl group-hover:bg-accentPrimary/10 transition-colors" />
 
                             <div className="flex gap-4 md:gap-6 items-start">
-                                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-accentSecondary/10 border border-accentSecondary/20 flex items-center justify-center text-accentSecondary shadow-inner transition-transform group-hover:scale-110">
+                                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-accentSecondary/20 border border-accentSecondary/30 flex items-center justify-center text-accentSecondary shadow-inner transition-transform group-hover:scale-110">
                                     {feat.icon}
                                 </div>
                                 <div>
                                     <h3 className="text-lg md:text-xl font-bold mb-2 tracking-tight group-hover:text-accentPrimary transition-colors">{feat.title}</h3>
-                                    <p className="text-textMuted leading-relaxed max-w-[600px] text-sm md:text-base">{feat.desc}</p>
+                                    <p className="text-text/90 leading-relaxed max-w-[600px] text-sm md:text-base">{feat.desc}</p>
                                 </div>
                             </div>
                         </div>

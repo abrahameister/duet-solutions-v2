@@ -15,7 +15,7 @@ const services = [
         description: "Liberamos a tu equipo de tareas manuales conectando tus aplicaciones favoritas para que te enfoques en lo que importa.",
         icon: <Split className="w-5 h-5 md:w-6 md:h-6" />,
         color: "text-blue-400",
-        bg: "bg-blue-400/10",
+        bg: "bg-blue-400/20",
         badges: ["n8n", "Apps Script"]
     },
     {
@@ -23,7 +23,7 @@ const services = [
         description: "Construimos aplicaciones empresariales, webapps y APIs a medida en tiempo récord, adaptándonos exactamente a tu negocio.",
         icon: <Code2 className="w-5 h-5 md:w-6 md:h-6" />,
         color: "text-emerald-400",
-        bg: "bg-emerald-400/10",
+        bg: "bg-emerald-400/20",
         badges: ["Power Apps", "AppSheet"]
     },
     {
@@ -31,7 +31,7 @@ const services = [
         description: "Integramos el poder de la IA en tus flujos diarios para analizar datos en segundos y optimizar la toma de decisiones.",
         icon: <Sparkles className="w-5 h-5 md:w-6 md:h-6" />,
         color: "text-orange-400",
-        bg: "bg-orange-400/10",
+        bg: "bg-orange-400/20",
         badges: ["OpenAI", "Gemini"]
     },
     {
@@ -39,7 +39,7 @@ const services = [
         description: "Diseñamos sitios web y landing pages de alta conversión conectadas fluidamente con tus sistemas automatizados.",
         icon: <Globe className="w-5 h-5 md:w-6 md:h-6" />,
         color: "text-pink-400",
-        bg: "bg-pink-400/10",
+        bg: "bg-pink-400/20",
         badges: ["Next.js", "React"]
     }
 ];
@@ -53,7 +53,7 @@ export default function ServiceCategories() {
                 y: 20,
                 opacity: 0,
                 duration: 0.4,
-                stagger: 0.08,
+                stagger: 0.1,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: sectionRef.current,
@@ -80,15 +80,15 @@ export default function ServiceCategories() {
                     {services.map((service, idx) => (
                         <div
                             key={idx}
-                            className="service-card group p-5 md:p-6 rounded-2xl bg-surface border border-white/5 transition-all duration-300 hover:border-accentPrimary/20 hover:shadow-xl flex flex-col items-start"
+                            className="service-card group p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-accentPrimary/40 hover:bg-white/10 hover:shadow-2xl flex flex-col items-start"
                         >
-                            <div className={`inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl ${service.bg} ${service.color} mb-5 transition-transform group-hover:scale-110 duration-300`}>
+                            <div className={`inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl ${service.bg} ${service.color} border border-white/5 mb-5 transition-transform group-hover:scale-110 duration-300`}>
                                 {service.icon}
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-text mb-2 tracking-tight">
+                            <h3 className="text-lg md:text-xl font-bold text-text mb-2 tracking-tight group-hover:text-accentPrimary transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-textMuted leading-relaxed mb-6 text-xs md:text-sm">
+                            <p className="text-text/90 leading-relaxed mb-6 text-xs md:text-sm">
                                 {service.description}
                             </p>
 
@@ -96,7 +96,7 @@ export default function ServiceCategories() {
                                 {service.badges.map((badge, bIdx) => (
                                     <span
                                         key={bIdx}
-                                        className="px-2.5 py-1 rounded-full bg-surface2/40 border border-white/5 text-[9px] md:text-xs font-semibold text-textMuted group-hover:text-text transition-colors"
+                                        className="px-2.5 py-1 rounded-full bg-surface/60 border border-white/10 text-[9px] md:text-xs font-semibold text-text group-hover:bg-accentPrimary/20 group-hover:border-accentPrimary/30 transition-all"
                                     >
                                         {badge}
                                     </span>
