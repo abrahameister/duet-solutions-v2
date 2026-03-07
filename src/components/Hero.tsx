@@ -15,12 +15,13 @@ export default function Hero({ onOpenContact }: HeroProps) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             // Elements entrance
-            gsap.from(".hero-element", {
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.15,
+            gsap.to(".hero-element", {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.1,
                 ease: "power2.out",
+                delay: 0.2, // Small delay for layout stabilization
             });
 
             // "Caos a Orden" micro-animation
@@ -72,20 +73,20 @@ export default function Hero({ onOpenContact }: HeroProps) {
 
                     {/* Text Content */}
                     <div className="max-w-2xl">
-                        <div className="hero-element inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentPrimary/10 text-accentPrimary font-semibold text-sm mb-6 border border-accentPrimary/20">
+                        <div className="hero-element opacity-0 translate-y-8 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentPrimary/10 text-accentPrimary font-semibold text-sm mb-6 border border-accentPrimary/20">
                             <Bot className="w-4 h-4" />
                             <span>El único límite es tu imaginación</span>
                         </div>
 
-                        <h1 className="hero-element text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text leading-[1.1] mb-6 tracking-tight">
+                        <h1 className="hero-element opacity-0 translate-y-8 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text leading-[1.1] mb-6 tracking-tight">
                             Impulsamos tu éxito, sin importar tu escala.
                         </h1>
 
-                        <p className="hero-element text-lg sm:text-xl text-textMuted mb-8 max-w-[680px] leading-relaxed">
+                        <p className="hero-element opacity-0 translate-y-8 text-lg sm:text-xl text-textMuted mb-8 max-w-[680px] leading-relaxed">
                             Optimizamos tus procesos y potenciamos tu equipo con <strong>automatización</strong> e <strong>Inteligencia Artificial</strong>. Reduce hasta un <span className="text-accentPrimary font-bold">80%</span> las tareas manuales de tu agencia o empresa. ¡Es el camino hacia una operación fluida y una productividad imparable!
                         </p>
 
-                        <div className="hero-element flex flex-col sm:flex-row gap-4 mb-12">
+                        <div className="hero-element opacity-0 translate-y-8 flex flex-col sm:flex-row gap-4 mb-12">
                             <button
                                 onClick={onOpenContact}
                                 className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accentPrimary px-8 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-[#d47629] focus-ring"
@@ -96,7 +97,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
                         </div>
 
                         {/* Escaneable Benefits */}
-                        <div className="hero-element grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/50">
+                        <div className="hero-element opacity-0 translate-y-8 grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/50">
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
                                     <Zap className="w-5 h-5 text-accentPrimary" />
@@ -122,7 +123,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
                     </div>
 
                     {/* Visual: "Caos a Orden" */}
-                    <div className="hero-element hidden lg:flex items-center justify-center relative h-[400px]">
+                    <div className="hero-element opacity-0 translate-y-8 hidden lg:flex items-center justify-center relative h-[400px]">
                         <div className="absolute inset-0 bg-gradient-to-tr from-accentPrimary/5 to-accentSecondary/5 rounded-3xl" />
 
                         <div ref={visualsRef} className="relative w-full h-full flex items-center justify-center">

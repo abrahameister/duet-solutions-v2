@@ -15,11 +15,12 @@ export default function HeaderMinimal({ onOpenContact }: HeaderProps) {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(headerRef.current, {
-                y: -100,
-                opacity: 0,
+            gsap.to(headerRef.current, {
+                y: 0,
+                opacity: 1,
                 duration: 0.8,
                 ease: "power2.out",
+                delay: 0.1,
             });
         }, headerRef);
         return () => ctx.revert();
@@ -28,7 +29,7 @@ export default function HeaderMinimal({ onOpenContact }: HeaderProps) {
     return (
         <header
             ref={headerRef}
-            className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg/80 border-b border-border shadow-sm"
+            className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg/80 border-b border-border shadow-sm opacity-0 -translate-y-full"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 focus-ring rounded-md">

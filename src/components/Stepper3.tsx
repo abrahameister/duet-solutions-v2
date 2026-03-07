@@ -54,14 +54,14 @@ export default function Stepper3() {
             // Animate steps
             const stepElements = gsap.utils.toArray(".process-step");
             stepElements.forEach((step: any, i) => {
-                gsap.from(step, {
-                    x: -50,
-                    opacity: 0,
+                gsap.to(step, {
+                    x: 0,
+                    opacity: 1,
                     duration: 0.8,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: step,
-                        start: "top 80%",
+                        start: "top 85%",
                     }
                 });
             });
@@ -94,7 +94,7 @@ export default function Stepper3() {
 
                     <div className="space-y-16 relative">
                         {steps.map((step, idx) => (
-                            <div key={idx} className="process-step flex items-start gap-8 md:gap-12 relative z-10">
+                            <div key={idx} className="process-step opacity-0 -translate-x-8 flex items-start gap-8 md:gap-12 relative z-10">
                                 {/* Number / Icon */}
                                 <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-surface border border-border shadow-sm flex flex-col items-center justify-center relative bg-clip-padding">
                                     <span className="text-sm font-bold text-accentPrimary mb-1">Paso {step.num}</span>

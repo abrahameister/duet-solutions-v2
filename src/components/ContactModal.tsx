@@ -18,10 +18,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             document.body.style.overflow = "hidden";
             const ctx = gsap.context(() => {
                 gsap.to(overlayRef.current, { opacity: 1, duration: 0.3 });
-                gsap.fromTo(modalRef.current,
-                    { scale: 0.95, opacity: 0, y: 20 },
-                    { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
-                );
+                gsap.to(modalRef.current, {
+                    scale: 1,
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: "power2.out",
+                });
             });
             return () => ctx.revert();
         } else {
@@ -39,7 +42,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         >
             <div
                 ref={modalRef}
-                className="relative w-full max-w-md bg-[#0B1722] border border-white/10 rounded-3xl p-8 shadow-2xl"
+                className="relative w-full max-w-md bg-[#0B1722] border border-white/10 rounded-3xl p-8 shadow-2xl scale-95 opacity-0 translate-y-5"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
