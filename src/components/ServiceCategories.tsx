@@ -76,27 +76,27 @@ export default function ServiceCategories() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, idx) => (
                         <div
                             key={idx}
-                            className="service-card group p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-300 hover:border-accentPrimary/40 hover:bg-white/10 hover:shadow-2xl flex flex-col items-start"
+                            className="service-card group p-6 rounded-2xl bg-[#1A3B56]/50 border border-white/10 transition-all duration-300 hover:border-accentPrimary/40 hover:bg-[#1A3B56]/70 hover:shadow-2xl flex flex-col items-start min-h-[280px]"
                         >
-                            <div className={`inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl ${service.bg} ${service.color} border border-white/5 mb-5 transition-transform group-hover:scale-110 duration-300`}>
+                            <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${service.bg} ${service.color} border border-white/10 mb-5 transition-transform group-hover:scale-110 duration-300 shadow-lg`}>
                                 {service.icon}
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-text mb-2 tracking-tight group-hover:text-accentPrimary transition-colors">
+                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-accentPrimary transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-text/90 leading-relaxed mb-6 text-xs md:text-sm">
+                            <p className="text-slate-300 leading-relaxed mb-6 text-sm">
                                 {service.description}
                             </p>
 
-                            <div className="flex flex-wrap gap-1.5 mt-auto">
+                            <div className="flex flex-wrap gap-2 mt-auto">
                                 {service.badges.map((badge, bIdx) => (
                                     <span
                                         key={bIdx}
-                                        className="px-2.5 py-1 rounded-full bg-surface/60 border border-white/10 text-[9px] md:text-xs font-semibold text-text group-hover:bg-accentPrimary/20 group-hover:border-accentPrimary/30 transition-all"
+                                        className="px-3 py-1 rounded-full bg-bg/60 border border-white/10 text-[10px] font-semibold text-white group-hover:bg-accentPrimary/20 group-hover:border-accentPrimary/30 transition-all"
                                     >
                                         {badge}
                                     </span>
