@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Database, FileCode, CheckCircle2, Box } from "lucide-react";
+import { Split, Code2, Sparkles, Globe } from "lucide-react";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -11,32 +11,36 @@ if (typeof window !== "undefined") {
 
 const services = [
     {
-        title: "Appsheet",
-        description: "Desarrollo de aplicaciones empresariales sin código, optimizando flujos de trabajo y recolección de datos.",
-        icon: <Box className="w-8 h-8" />,
-        color: "text-accentPrimary",
-        bg: "bg-accentPrimary/10",
+        title: "Automatización de Procesos",
+        description: "Liberamos a tu equipo de las tareas manuales y repetitivas. Conectamos tus herramientas para que te enfoques en escalar tu negocio.",
+        icon: <Split className="w-8 h-8" />,
+        color: "text-blue-400",
+        bg: "bg-blue-400/10",
+        badges: ["Power Automate", "n8n", "Google Apps Script"]
     },
     {
-        title: "BigQuery",
-        description: "Procesamos y analizamos grandes volúmenes de datos para que puedas obtener insights valiosos y tomar decisiones informadas.",
-        icon: <Database className="w-8 h-8" />,
-        color: "text-text",
-        bg: "bg-text/10",
+        title: "Desarrollo Low-Code & No-Code",
+        description: "Construimos aplicaciones empresariales, webapps y APIs a medida en tiempo récord, adaptándonos a las necesidades de tu negocio.",
+        icon: <Code2 className="w-8 h-8" />,
+        color: "text-emerald-400",
+        bg: "bg-emerald-400/10",
+        badges: ["Power Apps", "AppSheet", "Apps Script"]
     },
     {
-        title: "Appscript",
-        description: "Creamos scripts personalizados para automatizar tareas repetitivas en Google Sheets, Docs, Gmail y Drive, ahorrándote tiempo y esfuerzo.",
-        icon: <FileCode className="w-8 h-8" />,
-        color: "text-accentSecondary",
-        bg: "bg-accentSecondary/10",
+        title: "Inteligencia Artificial",
+        description: "Integramos el poder de la IA en tus flujos diarios para analizar datos en segundos, generar respuestas automáticas y optimizar la toma de decisiones.",
+        icon: <Sparkles className="w-8 h-8" />,
+        color: "text-orange-400",
+        bg: "bg-orange-400/10",
+        badges: ["OpenAI", "Gemini"]
     },
     {
-        title: "Google Workspace",
-        description: "Implementación, migración y capacitación para aprovechar al máximo las herramientas colaborativas de Google.",
-        icon: <CheckCircle2 className="w-8 h-8" />,
-        color: "text-accentPrimary",
-        bg: "bg-accentPrimary/10",
+        title: "Presencia Digital",
+        description: "Diseñamos sitios web y landing pages de alto impacto, optimizados para la conversión y conectados fluidamente con tus sistemas automatizados.",
+        icon: <Globe className="w-8 h-8" />,
+        color: "text-pink-400",
+        bg: "bg-pink-400/10",
+        badges: ["Next.js", "TypeScript", "React"]
     }
 ];
 
@@ -72,27 +76,31 @@ export default function ServiceCategories() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {services.map((service, idx) => (
                         <div
                             key={idx}
-                            className="service-card group relative p-8 rounded-2xl bg-surface border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 overflow-hidden"
+                            className="service-card group p-10 rounded-3xl bg-surface border border-white/5 transition-all duration-300 hover:border-accentPrimary/20 hover:shadow-2xl hover:shadow-accentPrimary/5 flex flex-col items-start"
                         >
-                            <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${service.bg} ${service.color} mb-6 transition-transform group-hover:scale-110`}>
+                            <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl ${service.bg} ${service.color} mb-8 transition-transform group-hover:scale-110 duration-300`}>
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-text mb-3">
+                            <h3 className="text-2xl font-bold text-text mb-4 tracking-tight">
                                 {service.title}
                             </h3>
-                            <p className="text-textMuted leading-relaxed">
+                            <p className="text-textMuted leading-relaxed mb-10 text-lg">
                                 {service.description}
                             </p>
 
-                            {/* Decorative Geometric Element */}
-                            <div className="absolute -right-6 -bottom-6 opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none">
-                                <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor" className="text-text">
-                                    <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" />
-                                </svg>
+                            <div className="flex flex-wrap gap-2 mt-auto">
+                                {service.badges.map((badge, bIdx) => (
+                                    <span
+                                        key={bIdx}
+                                        className="px-4 py-1.5 rounded-full bg-surface2/40 border border-white/5 text-xs font-semibold text-textMuted group-hover:text-text transition-colors"
+                                    >
+                                        {badge}
+                                    </span>
+                                ))}
                             </div>
                         </div>
                     ))}
