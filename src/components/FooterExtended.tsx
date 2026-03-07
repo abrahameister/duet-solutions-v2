@@ -40,10 +40,7 @@ export default function FooterExtended() {
                                 <Mail className="w-5 h-5 text-accentPrimary" />
                                 <a href="mailto:contacto@duetsolutions.cl" className="hover:text-text transition-colors focus-ring rounded-md">contacto@duetsolutions.cl</a>
                             </li>
-                            <li className="flex items-start gap-3">
-                                <MapPin className="w-5 h-5 text-accentPrimary shrink-0 mt-0.5" />
-                                <span>Torre Empresarial Global<br />Ciudad de Operaciones, CO 10001</span>
-                            </li>
+
                         </ul>
                         <div className="flex items-center gap-4 mt-8">
                             <a
