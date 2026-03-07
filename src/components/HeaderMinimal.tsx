@@ -6,7 +6,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 
-export default function HeaderMinimal() {
+interface HeaderProps {
+    onOpenContact: () => void;
+}
+
+export default function HeaderMinimal({ onOpenContact }: HeaderProps) {
     const headerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -43,13 +47,13 @@ export default function HeaderMinimal() {
                     <Link href="#servicios" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
                         Servicios
                     </Link>
-                    <Link href="#equipo" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
-                        Equipo
+                    <Link href="#como-lo-hacemos" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
+                        Cómo lo hacemos
                     </Link>
-                    <Link href="#faq" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
-                        FAQ
-                    </Link>
-                    <button className="group relative inline-flex items-center justify-center gap-2 rounded-md bg-surface px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-surface2 focus-ring shadow-sm overflow-hidden">
+                    <button
+                        onClick={onOpenContact}
+                        className="group relative inline-flex items-center justify-center gap-2 rounded-md bg-surface px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-surface2 focus-ring shadow-sm overflow-hidden"
+                    >
                         <span className="relative z-10 flex items-center gap-2">
                             Agendar Análisis Gratuito
                             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

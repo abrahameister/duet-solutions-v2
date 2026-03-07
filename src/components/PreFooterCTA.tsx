@@ -2,7 +2,11 @@
 
 import { ArrowRight } from "lucide-react";
 
-export default function PreFooterCTA() {
+interface PreFooterProps {
+    onOpenContact: () => void;
+}
+
+export default function PreFooterCTA({ onOpenContact }: PreFooterProps) {
     return (
         <section className="py-24 bg-bg relative overflow-hidden border-t border-border/50">
             <div className="absolute inset-0 bg-dot-pattern opacity-50 z-0 pointer-events-none" />
@@ -20,7 +24,10 @@ export default function PreFooterCTA() {
                     Porque en Duet Solutions, el único límite es tu imaginación.
                 </p>
 
-                <button className="group relative inline-flex items-center justify-center gap-3 rounded-xl bg-surface px-10 py-5 text-lg font-bold text-white transition-all hover:bg-surface2 focus-ring shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                <button
+                    onClick={onOpenContact}
+                    className="group relative inline-flex items-center justify-center gap-3 rounded-xl bg-surface px-10 py-5 text-lg font-bold text-white transition-all hover:bg-surface2 focus-ring shadow-xl hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
+                >
                     <span className="relative z-10 flex items-center gap-2">
                         Agendar Análisis Gratuito
                         <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />

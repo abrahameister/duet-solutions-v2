@@ -2,9 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ArrowRight, Bot, Zap, LineChart } from "lucide-react";
+import { ArrowRight, Bot, Zap, LineChart, Cloud, Brain, Settings, TrendingUp } from "lucide-react";
 
-export default function Hero() {
+interface HeroProps {
+    onOpenContact: () => void;
+}
+
+export default function Hero({ onOpenContact }: HeroProps) {
     const containerRef = useRef<HTMLElement>(null);
     const visualsRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +44,7 @@ export default function Hero() {
                     stagger: 0.1,
                     ease: "back.out(1.7)",
                 }).to(nodes, {
-                    x: (index) => (index * 60) - 90, // Arrange horizontally
+                    x: (index) => (index * 80) - 120, // Arrange horizontally with more space for icons
                     y: 0,
                     duration: 1.2,
                     ease: "power2.inOut",
@@ -53,6 +57,13 @@ export default function Hero() {
         }, containerRef);
         return () => ctx.revert();
     }, []);
+
+    const icons = [
+        <Cloud className="w-8 h-8 text-accentPrimary" key="cloud" />,
+        <Brain className="w-8 h-8 text-accentSecondary" key="brain" />,
+        <Settings className="w-8 h-8 text-accentPrimary" key="settings" />,
+        <TrendingUp className="w-8 h-8 text-accentSecondary" key="trending" />
+    ];
 
     return (
         <section ref={containerRef} className="relative pt-24 pb-32 overflow-hidden">
@@ -75,7 +86,10 @@ export default function Hero() {
                         </p>
 
                         <div className="hero-element flex flex-col sm:flex-row gap-4 mb-12">
-                            <button className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accentPrimary px-8 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-[#d47629] focus-ring">
+                            <button
+                                onClick={onOpenContact}
+                                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accentPrimary px-8 py-4 text-base font-bold text-white shadow-md transition-all hover:bg-[#d47629] focus-ring"
+                            >
                                 Agendar Análisis Gratuito
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                             </button>
@@ -118,12 +132,12 @@ export default function Hero() {
                             </div>
 
                             {/* Nodes */}
-                            {[1, 2, 3, 4].map((i) => (
+                            {icons.map((icon, i) => (
                                 <div
                                     key={i}
-                                    className="visual-node absolute w-16 h-16 bg-surface rounded-xl shadow-lg border border-border flex items-center justify-center z-10"
+                                    className="visual-node absolute w-16 h-16 bg-surface rounded-xl shadow-lg border border-border flex items-center justify-center z-10 transition-transform hover:scale-110"
                                 >
-                                    <div className={`w-8 h-8 rounded-lg ${i % 2 === 0 ? 'bg-accentSecondary/20' : 'bg-accentPrimary/20'}`} />
+                                    {icon}
                                 </div>
                             ))}
                         </div>
