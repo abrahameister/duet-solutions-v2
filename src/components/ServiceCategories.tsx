@@ -76,27 +76,27 @@ export default function ServiceCategories() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 opacity-100">
                     {services.map((service, idx) => (
                         <div
                             key={idx}
-                            className="service-card group p-6 rounded-2xl bg-[#1A3B56]/50 border border-white/10 transition-all duration-300 hover:border-accentPrimary/40 hover:bg-[#1A3B56]/70 hover:shadow-2xl flex flex-col items-start min-h-[280px]"
+                            className="service-card group p-6 rounded-2xl bg-[#1A3B56] border border-white/20 transition-all duration-300 hover:border-accentPrimary hover:bg-[#234B6E] hover:shadow-2xl flex flex-col items-start min-h-[300px] opacity-100"
                         >
-                            <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${service.bg} ${service.color} border border-white/10 mb-5 transition-transform group-hover:scale-110 duration-300 shadow-lg`}>
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accentPrimary/20 border border-white/20 mb-5 transition-transform group-hover:scale-110 duration-300 shadow-lg text-white">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-accentPrimary transition-colors">
+                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-accentPrimary transition-colors opacity-100">
                                 {service.title}
                             </h3>
-                            <p className="text-slate-300 leading-relaxed mb-6 text-sm">
+                            <p className="text-slate-100 leading-relaxed mb-6 text-sm opacity-100">
                                 {service.description}
                             </p>
 
-                            <div className="flex flex-wrap gap-2 mt-auto">
+                            <div className="flex flex-wrap gap-2 mt-auto opacity-100">
                                 {service.badges.map((badge, bIdx) => (
                                     <span
                                         key={bIdx}
-                                        className="px-3 py-1 rounded-full bg-bg/60 border border-white/10 text-[10px] font-semibold text-white group-hover:bg-accentPrimary/20 group-hover:border-accentPrimary/30 transition-all"
+                                        className="px-3 py-1 rounded-full bg-slate-900 border border-white/20 text-[10px] font-semibold text-white group-hover:bg-accentPrimary group-hover:border-accentPrimary transition-all opacity-100"
                                     >
                                         {badge}
                                     </span>

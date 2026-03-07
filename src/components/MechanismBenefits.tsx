@@ -67,23 +67,23 @@ export default function MechanismBenefits() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100">
                     {characteristics.map((feat, idx) => (
                         <div
                             key={idx}
-                            className="mechanism-card group relative p-6 md:p-8 rounded-2xl bg-[#1A3B56]/50 border border-white/10 transition-all duration-300 hover:border-accentPrimary/30 hover:bg-[#1A3B56]/70 hover:shadow-2xl overflow-hidden min-h-[160px]"
+                            className="mechanism-card group relative p-6 md:p-8 rounded-2xl bg-[#1A3B56] border border-white/20 transition-all duration-300 hover:border-accentPrimary hover:bg-[#234B6E] hover:shadow-2xl overflow-hidden min-h-[160px] opacity-100"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-accentPrimary/5 rounded-full blur-3xl group-hover:bg-accentPrimary/10 transition-colors pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-accentPrimary/10 rounded-full blur-3xl group-hover:bg-accentPrimary/20 transition-colors pointer-events-none" />
 
-                            <div className="flex gap-4 md:gap-6 items-start relative z-10">
-                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accentSecondary/20 border border-accentSecondary/30 flex items-center justify-center text-accentSecondary shadow-lg transition-transform group-hover:scale-110">
+                            <div className="flex gap-4 md:gap-6 items-start relative z-10 opacity-100">
+                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accentSecondary/20 border border-white/20 flex items-center justify-center text-accentSecondary shadow-lg transition-transform group-hover:scale-110 opacity-100">
                                     {feat.icon}
                                 </div>
-                                <div className="flex-grow">
-                                    <h3 className="text-xl font-bold mb-2 tracking-tight text-white group-hover:text-accentPrimary transition-colors">
+                                <div className="flex-grow opacity-100">
+                                    <h3 className="text-xl font-bold mb-2 tracking-tight text-white group-hover:text-accentPrimary transition-colors opacity-100">
                                         {feat.title}
                                     </h3>
-                                    <p className="text-slate-300 leading-relaxed max-w-[600px] text-sm md:text-base">
+                                    <p className="text-slate-100 leading-relaxed max-w-[600px] text-sm md:text-base opacity-100">
                                         {feat.desc}
                                     </p>
                                 </div>
