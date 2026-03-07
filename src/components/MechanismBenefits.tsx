@@ -37,11 +37,12 @@ export default function MechanismBenefits() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.from(".mechanism-card", {
-                y: 30,
-                opacity: 0,
+            // SOLUCIÓN: Cambiado a gsap.to al igual que arriba
+            gsap.to(".mechanism-card", {
+                y: 0,
+                opacity: 1,
                 duration: 0.5,
-                stagger: 0.1,
+                stagger: 0.15,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -67,23 +68,24 @@ export default function MechanismBenefits() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {characteristics.map((feat, idx) => (
                         <div
                             key={idx}
-                            className="mechanism-card group relative p-6 md:p-8 rounded-2xl bg-[#1A3B56] border border-white/20 transition-all duration-300 hover:border-accentPrimary hover:bg-[#234B6E] hover:shadow-2xl overflow-hidden min-h-[160px] opacity-100"
+                            // Mantenemos la lógica de empezar invisibles y animar
+                            className="mechanism-card opacity-0 translate-y-8 group relative p-6 md:p-8 rounded-2xl bg-[#1A3B56] border border-white/20 transition-all duration-300 hover:border-accentPrimary hover:bg-[#234B6E] hover:shadow-2xl overflow-hidden min-h-[160px]"
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-accentPrimary/10 rounded-full blur-3xl group-hover:bg-accentPrimary/20 transition-colors pointer-events-none" />
 
-                            <div className="flex gap-4 md:gap-6 items-start relative z-10 opacity-100">
-                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accentSecondary/20 border border-white/20 flex items-center justify-center text-accentSecondary shadow-lg transition-transform group-hover:scale-110 opacity-100">
+                            <div className="flex gap-4 md:gap-6 items-start relative z-10">
+                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accentSecondary/20 border border-white/20 flex items-center justify-center text-accentSecondary shadow-lg transition-transform group-hover:scale-110">
                                     {feat.icon}
                                 </div>
-                                <div className="flex-grow opacity-100">
-                                    <h3 className="text-xl font-bold mb-2 tracking-tight text-white group-hover:text-accentPrimary transition-colors opacity-100">
+                                <div className="flex-grow">
+                                    <h3 className="text-xl font-bold mb-2 tracking-tight text-white group-hover:text-accentPrimary transition-colors">
                                         {feat.title}
                                     </h3>
-                                    <p className="text-slate-100 leading-relaxed max-w-[600px] text-sm md:text-base opacity-100">
+                                    <p className="text-slate-100 leading-relaxed max-w-[600px] text-sm md:text-base">
                                         {feat.desc}
                                     </p>
                                 </div>
