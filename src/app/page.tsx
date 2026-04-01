@@ -3,6 +3,8 @@
 import { useState } from "react";
 import HeaderMinimal from "@/components/HeaderMinimal";
 import Hero from "@/components/Hero";
+import TechStackLogos from "@/components/TechStackLogos";
+import FalseSolutions from "@/components/FalseSolutions";
 import ServiceCategories from "@/components/ServiceCategories";
 import MechanismBenefits from "@/components/MechanismBenefits";
 import Stepper3 from "@/components/Stepper3";
@@ -21,6 +23,8 @@ export default function Home() {
             <HeaderMinimal onOpenContact={openModal} />
             <main className="flex-grow">
                 <Hero onOpenContact={openModal} />
+                <TechStackLogos />
+                <FalseSolutions onOpenContact={openModal} />
                 <ServiceCategories />
                 <MechanismBenefits />
                 <Stepper3 />

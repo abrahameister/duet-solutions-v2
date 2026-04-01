@@ -48,6 +48,9 @@ export default function HeaderMinimal({ onOpenContact }: HeaderProps) {
                     <Link href="#servicios" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
                         Servicios
                     </Link>
+                    <Link href="#el-problema" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
+                        El Problema
+                    </Link>
                     <Link href="#proceso" className="text-sm font-medium text-text hover:text-accentPrimary transition-colors focus-ring rounded-md px-2 py-1">
                         Cómo lo hacemos
                     </Link>

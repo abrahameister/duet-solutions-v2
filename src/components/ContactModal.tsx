@@ -18,6 +18,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         email: "",
         phone: "",
         company: "",
+        message: "",
         contact_preference: "WhatsApp"
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -65,7 +66,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             if (response.ok) {
                 setIsSuccess(true);
                 // Reset form
-                setFormData({ email: "", phone: "", company: "", contact_preference: "WhatsApp" });
+                setFormData({ email: "", phone: "", company: "", message: "", contact_preference: "WhatsApp" });
             } else {
                 alert("Hubo un error al enviar el formulario. Por favor intenta de nuevo.");
             }
@@ -154,6 +155,20 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                                         placeholder="Tu Empresa SpA"
                                         className="w-full bg-[#1A3B56]/40 border border-white/10 rounded-xl px-4 py-3.5 text-text placeholder:text-textMuted/40 focus:outline-none focus:ring-2 focus:ring-accentPrimary/50 transition-all"
+                                        disabled={isSubmitting}
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Message */}
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold text-text">¿Cómo podemos ayudarte? (Opcional)</label>
+                                <div className="relative">
+                                    <textarea
+                                        value={formData.message}
+                                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                        placeholder="Ej: Necesitamos mejorar los procesos en terreno y evitar tanto papel..."
+                                        className="w-full bg-[#1A3B56]/40 border border-white/10 rounded-xl px-4 py-3.5 text-text placeholder:text-textMuted/40 focus:outline-none focus:ring-2 focus:ring-accentPrimary/50 transition-all min-h-[100px] resize-y"
                                         disabled={isSubmitting}
                                     />
                                 </div>
