@@ -87,6 +87,7 @@ export default function ImpulsaForm() {
                     email: formData.email,
                     phone: formData.telefono,       // Make.com column C: Teléfono
                     company: formData.empresa,      // Make.com column D: Empresa
+                    comments: formData.desafio,     // Make.com column H: Comentarios
                     // Extra fields for the contest
                     nombre: formData.nombre,
                     desafio: formData.desafio,
