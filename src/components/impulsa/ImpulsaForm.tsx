@@ -83,7 +83,13 @@ export default function ImpulsaForm() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    ...formData,
+                    // Keys mapped to match Make.com existing column mapping
+                    email: formData.email,
+                    phone: formData.telefono,       // Make.com column C: Teléfono
+                    company: formData.empresa,      // Make.com column D: Empresa
+                    // Extra fields for the contest
+                    nombre: formData.nombre,
+                    desafio: formData.desafio,
                     source: "Landing Concurso /impulsa",
                     date: new Date().toLocaleString("es-CL"),
                 }),
