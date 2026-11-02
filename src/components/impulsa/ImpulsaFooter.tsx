@@ -9,14 +9,26 @@ export default function ImpulsaFooter() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
                     {/* Logo + tagline */}
                     <div className="flex flex-col items-center sm:items-start gap-3">
-                        <Link href="/" className="focus-ring rounded-md" aria-label="Ir a duetsolutions.cl">
+                        <Link
+                            href="/"
+                            className="flex items-center gap-3 focus-ring rounded-md"
+                            aria-label="Ir a duetsolutions.cl"
+                        >
                             <Image
-                                src="https://i.postimg.cc/8C6R8kgf/duet-solutions.png"
+                                src="/images/logos/Logo_Sin_Texto_Color (1).png"
                                 alt="Duet Solutions Logo"
-                                width={140}
-                                height={36}
-                                className="w-auto h-8 object-contain brightness-0 invert"
+                                width={34}
+                                height={34}
+                                className="w-8 h-8 object-contain"
                             />
+                            <div className="flex flex-col">
+                                <span className="text-base font-black text-white leading-none tracking-tight">
+                                    Duet
+                                </span>
+                                <span className="text-xs font-semibold text-white/90 leading-none tracking-tight">
+                                    Solutions
+                                </span>
+                            </div>
                         </Link>
                         <p className="text-xs text-textMuted max-w-[240px] text-center sm:text-left leading-relaxed">
                             Impulsando tu éxito digital, sin importar tu escala.
@@ -53,7 +65,8 @@ export default function ImpulsaFooter() {
                             </a>
                         </div>
                         <p className="text-xs text-textMuted">
-                            © {new Date().getFullYear()} Duet Solutions. Todos los derechos reservados.
+                            © {new Date().getFullYear()} Duet Solutions. Todos los derechos
+                            reservados.
                         </p>
                     </div>
                 </div>

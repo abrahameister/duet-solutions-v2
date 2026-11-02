@@ -24,19 +24,31 @@ export default function ImpulsaHeader() {
     return (
         <header
             ref={headerRef}
-            className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg/80 border-b border-border shadow-sm opacity-0 -translate-y-4"
+            className="sticky top-0 z-50 w-full backdrop-blur-md bg-bg/85 border-b border-border shadow-sm opacity-0 -translate-y-4"
         >
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 focus-ring rounded-md" aria-label="Ir a inicio de Duet Solutions">
+                {/* Logo Local */}
+                <Link
+                    href="/"
+                    className="flex items-center gap-3 focus-ring rounded-md"
+                    aria-label="Ir a inicio de Duet Solutions"
+                >
                     <Image
-                        src="https://i.postimg.cc/8C6R8kgf/duet-solutions.png"
+                        src="/images/logos/Logo_Sin_Texto_Color (1).png"
                         alt="Duet Solutions Logo"
-                        width={150}
-                        height={38}
-                        className="w-auto h-9 object-contain"
+                        width={36}
+                        height={36}
+                        className="w-9 h-9 object-contain"
                         priority
                     />
+                    <div className="flex flex-col">
+                        <span className="text-lg font-black text-white leading-none tracking-tight">
+                            Duet
+                        </span>
+                        <span className="text-sm font-semibold text-white/90 leading-none tracking-tight">
+                            Solutions
+                        </span>
+                    </div>
                 </Link>
 
                 {/* Contest Badge */}

@@ -3,11 +3,10 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Loader2, CheckCircle2, User, Mail, Building2, Phone, MessageSquare, Send } from "lucide-react";
+import { Loader2, CheckCircle2, User, Mail, Building2, Phone, MessageSquare, Send, AlertCircle } from "lucide-react";
+import { submitLeadToMake } from "@/lib/submitLead";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const WEBHOOK_URL = "https://hook.us2.make.com/dlog1wex5s3u1h5tp4ipfntf9x25vbtu";
 
 interface FormData {
     nombre: string;
@@ -30,6 +29,7 @@ export default function ImpulsaForm() {
     const [formData, setFormData] = useState<FormData>(initialData);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
     const [errors, setErrors] = useState<Partial<FormData>>({});
 
     useEffect(() => {
@@ -78,35 +78,28 @@ export default function ImpulsaForm() {
         if (!validate()) return;
 
         setIsSubmitting(true);
-        try {
-            const response = await fetch(WEBHOOK_URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    // Keys mapped to match Make.com existing column mapping
-                    email: formData.email,
-                    phone: formData.telefono,       // Make.com column C: Teléfono
-                    company: formData.empresa,      // Make.com column D: Empresa
-                    comments: formData.desafio,     // Make.com column H: Comentarios
-                    // Extra fields for the contest
-                    nombre: formData.nombre,
-                    desafio: formData.desafio,
-                    source: "Landing Concurso /impulsa",
-                    date: new Date().toLocaleString("es-CL"),
-                }),
-            });
+        setSubmitError(null);
 
-            if (response.ok) {
-                setIsSuccess(true);
-                setFormData(initialData);
-            } else {
-                alert("Hubo un problema al enviar tu postulación. Por favor intenta de nuevo.");
-            }
-        } catch {
-            alert("Error de conexión. Verifica tu internet e intenta de nuevo.");
-        } finally {
-            setIsSubmitting(false);
+        const result = await submitLeadToMake({
+            // Keys mapped to match Make.com existing column mapping
+            email: formData.email,
+            phone: formData.telefono,       // Make.com column C: Teléfono
+            company: formData.empresa,      // Make.com column D: Empresa
+            comments: formData.desafio,     // Make.com column H: Comentarios
+            // Extra fields for the contest
+            nombre: formData.nombre,
+            desafio: formData.desafio,
+            source: "Landing Concurso /impulsa",
+            date: new Date().toLocaleString("es-CL"),
+        });
+
+        if (result.ok) {
+            setIsSuccess(true);
+            setFormData(initialData);
+        } else {
+            setSubmitError(result.error || "Hubo un problema al enviar tu postulación. Por favor intenta de nuevo.");
         }
+        setIsSubmitting(false);
     };
 
     const inputBase =
@@ -154,6 +147,15 @@ export default function ImpulsaForm() {
                         onSubmit={handleSubmit}
                         noValidate
                     >
+                        {submitError && (
+                            <div
+                                role="alert"
+                                className="flex items-start gap-2.5 rounded-xl bg-danger/15 border border-danger/40 p-4 text-xs text-white"
+                            >
+                                <AlertCircle className="w-4 h-4 text-danger shrink-0 mt-0.5" />
+                                <span>{submitError}</span>
+                            </div>
+                        )}
                         {/* Nombre */}
                         <div>
                             <label htmlFor="nombre" className={labelBase}>

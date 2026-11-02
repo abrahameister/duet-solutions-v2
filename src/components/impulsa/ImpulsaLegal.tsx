@@ -87,9 +87,9 @@ export default function ImpulsaLegal() {
                     </summary>
 
                     <div className="px-6 pb-8 pt-2 border-t border-border">
-                        <h3 className="text-base font-bold text-text mt-4 mb-6 text-center uppercase tracking-widest text-xs text-textMuted">
+                        <h3 className="font-bold mt-4 mb-6 text-center uppercase tracking-widest text-xs text-textMuted">
                             Bases Legales del Concurso:<br />
-                            <span className="text-text text-sm normal-case tracking-normal">"IMPULSA TU NEGOCIO CON DUET SOLUTIONS"</span>
+                            <span className="text-text text-sm normal-case tracking-normal">&ldquo;IMPULSA TU NEGOCIO CON DUET SOLUTIONS&rdquo;</span>
                         </h3>
 
                         <ol className="space-y-5">

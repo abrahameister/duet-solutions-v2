@@ -1,5 +1,3 @@
-"use client";
-
 import ImpulsaHeader from "@/components/impulsa/ImpulsaHeader";
 import ImpulsaHero from "@/components/impulsa/ImpulsaHero";
 import ImpulsaPrize from "@/components/impulsa/ImpulsaPrize";
@@ -32,7 +30,7 @@ export default function ImpulsaPage() {
 
             <div className="relative z-10 flex flex-col min-h-screen">
                 <ImpulsaHeader />
-                <main>
+                <main id="main-content">
                     <ImpulsaHero />
                     <ImpulsaPrize />
                     <ImpulsaForm />

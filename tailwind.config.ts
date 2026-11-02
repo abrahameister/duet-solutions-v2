@@ -19,6 +19,12 @@ const config: Config = {
         accentSecondary: "#86AB45",
         danger: "#FF5A6B",
         warning: "#FFCC66",
+        // Nuevos colores Sprint 1
+        navy: "#0D2F4F",
+        navyDark1: "#071B2C",
+        navyDark2: "#0A2338",
+        brandOrange: "#FF8C1A",
+        brandGreen: "#86AE3F",
       },
       borderRadius: {
         sm: "10px",
@@ -31,15 +37,28 @@ const config: Config = {
         md: "0 14px 40px rgba(0,0,0,0.35)",
       },
       fontFamily: {
-        heading: ["Space Grotesk", "Syne", "system-ui", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "Space Grotesk", "system-ui", "sans-serif"],
+        body: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        signature: ["var(--font-nanum)", "cursive"],
       },
       backgroundImage: {
-        'dot-pattern': 'radial-gradient(circle, rgba(234,240,255,0.05) 1px, transparent 1px)',
+        "dot-pattern": "radial-gradient(circle, rgba(234,240,255,0.05) 1px, transparent 1px)",
+        "geist-grid":
+          "linear-gradient(to right, rgba(234,240,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(234,240,255,0.03) 1px, transparent 1px)",
       },
       backgroundSize: {
-        'dot-pattern': '24px 24px',
-      }
+        "dot-pattern": "24px 24px",
+        "geist-grid": "48px 48px",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 6s linear infinite",
+      },
     },
   },
   plugins: [],
